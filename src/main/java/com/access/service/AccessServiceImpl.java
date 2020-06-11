@@ -22,26 +22,19 @@ public class AccessServiceImpl implements AccessServiceI {
 	}
 
 	@Override
-	public Optional<Access> getById(int id) {
+	public Access getById(int id) {
 
-		return accessDao.findById(id);
+		return null;
 
 	}
 
 	@Override
 	public void deleteByid(int id) {
-		accessDao.deleteById(id);
 
 	}
 
 	@Override
-	public void updateStudent(int id, Access access,String username,String studentAccess) {
+	public void updateStudent(int id, Access access, String username, String studentAccess) {
 
-		Optional<Access> accessUpdate = accessDao.findById(id);
-		if (accessUpdate.isPresent())
-		access.setUsername(username);
-		access.setStudentAccess(studentAccess);
-		
-		 accessDao.save(access);
 	}
 }
