@@ -17,7 +17,7 @@ public class AccessServiceImpl implements AccessServiceI {
 		return accessDao.save(access);
 
 	}
-	
+
 	@Override
 	public void updateStudent(int id, Access access) {
 		Access accessUpdate = accessDao.findById(id).get();
@@ -33,8 +33,9 @@ public class AccessServiceImpl implements AccessServiceI {
 	}
 
 	@Override
-	public boolean deleteByid(int id) {
+	public boolean deleteById(int id) {
+		accessDao.deleteById(id);
 		return true;
 	}
 
-	}
+}

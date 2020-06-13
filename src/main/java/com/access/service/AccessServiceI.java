@@ -8,7 +8,8 @@ public interface AccessServiceI {
 
 	public Access getById(int id);
 
-	public boolean deleteByid(int id);
-
 	public void updateStudent(int id, Access access);
+
+	public boolean deleteById(int id);
+
 }

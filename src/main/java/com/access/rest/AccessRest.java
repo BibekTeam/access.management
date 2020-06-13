@@ -37,4 +37,10 @@ public class AccessRest {
 		return new ResponseEntity<Access>(access, HttpStatus.OK);
 	}
 
+	@PostMapping("/deleteStudent/{id}")
+	public ResponseEntity<?> deleteStudent(@PathVariable("id") int id) {
+		boolean isDelete = accessService.deleteById(id);
+		return new ResponseEntity<Boolean>(isDelete, HttpStatus.OK);
+	}
+
 }
