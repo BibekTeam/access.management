@@ -1,7 +1,5 @@
 package com.access.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +14,17 @@ public class AccessServiceImpl implements AccessServiceI {
 
 	@Override
 	public Access addStudent(Access access) {
-
 		return accessDao.save(access);
 
+	}
+	
+	@Override
+	public void updateStudent(int id, Access access) {
+		Access accessUpdate = accessDao.findById(id).get();
+		if (accessUpdate != null) {
+			accessDao.deleteById(id);
+			accessDao.save(access);
+		}
 	}
 
 	@Override
@@ -27,12 +33,8 @@ public class AccessServiceImpl implements AccessServiceI {
 	}
 
 	@Override
-	public void deleteByid(int id) {
-
+	public boolean deleteByid(int id) {
+		return true;
 	}
 
-	@Override
-	public void updateStudent(int id, Access access, String username, String studentAccess) {
-
 	}
-}
