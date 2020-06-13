@@ -23,9 +23,7 @@ public class AccessServiceImpl implements AccessServiceI {
 
 	@Override
 	public Access getById(int id) {
-
-		return null;
-
+		return accessDao.findById(id).get();
 	}
 
 	@Override
